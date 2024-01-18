@@ -1,0 +1,129 @@
+:root {
+    --big-brown: #51391e;
+    --bright-brown: #d5bfae;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: var(--big-brown);
+}
+
+header {
+    background-color: var(--big-brown);
+    position: fixed;
+    z-index: 666;
+    top: 0; left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+}
+
+header .logo a {
+    font-family: 'Leckerli One', cursive;
+    font-size: 21px;
+    color: var(--bright-brown);
+    text-decoration: none;
+}
+
+aside {
+    background-color: var(--bright-brown);
+    position: fixed;
+    z-index: 666;
+    top: 50px;
+    left: 0;
+    /* width: 300px; */
+    width: calc(35px + 12px);
+    height: 100%;
+    padding: 30px 6px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+aside.active {
+    width: 300px;
+}
+
+aside .menu-toggle,
+aside menu li a,
+aside nav.logout a {
+    display: flex;
+    align-items: center;
+    width: calc(300px - 12px);
+    margin: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .3s;
+    border-radius: 12px;
+}
+
+aside .menu-toggle:hover,
+aside menu li a:hover,
+aside nav.logout a:hover {
+    background-color: #ffffff50;
+}
+
+aside .menu-toggle {
+    margin-bottom: 30px;
+}
+
+aside .menu-toggle .toggle-btn,
+aside menu li a .icon,
+aside nav.logout a .icon {
+    background-color: var(--big-brown);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    margin-right: 6px;
+    border-radius: 12px;
+}
+
+aside .menu-toggle .toggle-btn span {
+    background-color: white;
+    display: block;
+    width: 10px;
+    height: 4px;
+    margin: 2px 0;
+    border-radius: 2px;
+    transition: .3s;
+}
+
+aside .menu-toggle:hover .toggle-btn span:nth-child(2) {
+    transform-origin: center;
+    transform: translateX(5px);
+}
+
+aside.active .menu-toggle:hover .toggle-btn span:nth-child(2) {
+    transform-origin: center;
+    transform: translateX(-5px);
+}
+
+aside menu li a .icon i {
+    color: white;
+}
+
+aside .menu-toggle span,
+aside menu li a span,
+aside nav.logout a span {
+    font-size: 14px;
+}
+
+main {
+    margin-top: 50px;
+    margin-left: 47px;
+    padding: 30px;
+    padding-bottom: 100px;
+    transition: .3s;
+}
+
+aside.active ~ main {
+    margin-left: 300px;
+}
